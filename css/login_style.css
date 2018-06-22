@@ -1,0 +1,1498 @@
+@charset "UTF-8";
+/* Mixins
+-------------------------------------------------------------- */
+* {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+* a {
+  text-decoration: none !important; }
+
+body {
+  background: #f1f1f1 !important; }
+
+.loginScreenPopUpWrapper {
+  position: fixed;
+  z-index: 9998;
+  -moz-transform: translateZ(9998px);
+  /* Для Firefox */
+  -ms-transform: translateZ(9998px);
+  /* Для IE */
+  -webkit-transform: translateZ(9998px);
+  /* Для Safari, Chrome, iOS */
+  -o-transform: translateZ(9998px);
+  /* Для Opera */
+  transform: translateZ(9998px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F9FC;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  /* Mozilla 1.6 и ниже */
+  -khtml-opacity: 1;
+  /* Konqueror 3.1, Safari 1.1 */
+  opacity: 1;
+  /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+  visibility: visible;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s; }
+  @media (max-width: 1024px) {
+    .loginScreenPopUpWrapper {
+      overflow: auto; } }
+  .loginScreenPopUpWrapper .lsFirst {
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: transparent url(../assets/ls-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-transition: all 0.75s;
+    -o-transition: all 0.75s;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+    -moz-transform: translateX(-80px);
+    /* Для Firefox */
+    -ms-transform: translateX(-80px);
+    /* Для IE */
+    -webkit-transform: translateX(-80px);
+    /* Для Safari, Chrome, iOS */
+    -o-transform: translateX(-80px);
+    /* Для Opera */
+    transform: translateX(-80px);
+    padding-top: 200px; }
+    @media (max-width: 1260px) {
+      .loginScreenPopUpWrapper .lsFirst {
+        width: 40%; } }
+    @media (max-width: 1024px) {
+      .loginScreenPopUpWrapper .lsFirst {
+        width: 100%;
+        height: 200px;
+        padding-top: 0;
+        display: none !important;
+        -moz-transform: translateZ(12px);
+        /* Для Firefox */
+        -ms-transform: translateZ(12px);
+        /* Для IE */
+        -webkit-transform: translateZ(12px);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateZ(12px);
+        /* Для Opera */
+        transform: translateZ(12px);
+        z-index: 12; } }
+    .loginScreenPopUpWrapper .lsFirst.show {
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: visible;
+      -moz-transform: translateX(0px);
+      /* Для Firefox */
+      -ms-transform: translateX(0px);
+      /* Для IE */
+      -webkit-transform: translateX(0px);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: translateX(0px);
+      /* Для Opera */
+      transform: translateX(0px); }
+  .loginScreenPopUpWrapper .lsAwaiting {
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: transparent url(../assets/ls-bg-3.jpg) center no-repeat/cover;
+    background-size: cover;
+    -moz-transition: all 0.75s;
+    -o-transition: all 0.75s;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+    -moz-transform: translateX(-80px);
+    /* Для Firefox */
+    -ms-transform: translateX(-80px);
+    /* Для IE */
+    -webkit-transform: translateX(-80px);
+    /* Для Safari, Chrome, iOS */
+    -o-transform: translateX(-80px);
+    /* Для Opera */
+    transform: translateX(-80px);
+    padding-top: 68px;
+    text-align: center; }
+    @media (max-width: 1260px) {
+      .loginScreenPopUpWrapper .lsAwaiting {
+        width: 40%; } }
+    @media (max-width: 1024px) {
+      .loginScreenPopUpWrapper .lsAwaiting {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 12;
+        -moz-transform: translateZ(12px);
+        /* Для Firefox */
+        -ms-transform: translateZ(12px);
+        /* Для IE */
+        -webkit-transform: translateZ(12px);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateZ(12px);
+        /* Для Opera */
+        transform: translateZ(12px); } }
+    .loginScreenPopUpWrapper .lsAwaiting.show {
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: visible;
+      -moz-transform: translateX(0px);
+      /* Для Firefox */
+      -ms-transform: translateX(0px);
+      /* Для IE */
+      -webkit-transform: translateX(0px);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: translateX(0px);
+      /* Для Opera */
+      transform: translateX(0px); }
+    .loginScreenPopUpWrapper .lsAwaiting .check {
+      display: block;
+      width: 52px;
+      height: auto;
+      margin: 0 auto 24px; }
+    .loginScreenPopUpWrapper .lsAwaiting .npTitle {
+      font-size: 24px;
+      color: #24465f;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+      margin-bottom: 38px;
+      margin-top: 0; }
+      @media (max-width: 1260px) {
+        .loginScreenPopUpWrapper .lsAwaiting .npTitle {
+          font-size: 18px; } }
+    .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper {
+      text-align: center;
+      margin-bottom: 34px; }
+      .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone {
+        display: inline-block;
+        position: relative;
+        font-size: 0; }
+        .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone .phoneWrapper {
+          position: relative;
+          z-index: 8;
+          display: block;
+          width: auto;
+          height: calc(100vh - 350px);
+          margin: 0 auto;
+          pointer-events: none; }
+        .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone .phoneBg {
+          position: absolute;
+          z-index: 1;
+          top: 11.4%;
+          left: 6.2%;
+          width: 88.1%;
+          height: auto;
+          pointer-events: none; }
+        .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone .progress {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          width: 42%;
+          height: 20%;
+          position: absolute;
+          z-index: 14;
+          top: 21%;
+          left: 31%; }
+          .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone .progress canvas {
+            max-width: 100%;
+            max-height: 100%; }
+        .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone .timer {
+          width: 100%;
+          height: 20%;
+          position: absolute;
+          z-index: 14;
+          top: 20%;
+          left: 1px;
+          text-align: center;
+          font-family: "Open Sans", sans-serif;
+          font-weight: 100;
+          color: #fff;
+          font-size: 42px;
+          line-height: 1;
+          text-transform: uppercase; }
+          .loginScreenPopUpWrapper .lsAwaiting .phoneWrapper .phone .timer .inner {
+            position: absolute;
+            top: 55%;
+            left: 52%;
+            -moz-transform: translate(-50%, -50%);
+            /* Для Firefox */
+            -ms-transform: translate(-50%, -50%);
+            /* Для IE */
+            -webkit-transform: translate(-50%, -50%);
+            /* Для Safari, Chrome, iOS */
+            -o-transform: translate(-50%, -50%);
+            /* Для Opera */
+            transform: translate(-50%, -50%); }
+    .loginScreenPopUpWrapper .lsAwaiting .npButton {
+      display: block;
+      max-width: 172px;
+      width: 100%;
+      margin: 0 auto; }
+  .loginScreenPopUpWrapper .rsWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #F7F9FC;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    visibility: hidden;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    overflow: auto; }
+    @media (max-width: 1260px) {
+      .loginScreenPopUpWrapper .rsWrapper {
+        width: 60%; } }
+    @media (max-width: 1024px) {
+      .loginScreenPopUpWrapper .rsWrapper {
+        width: 100%;
+        height: auto;
+        -moz-transform: translateX(0px);
+        /* Для Firefox */
+        -ms-transform: translateX(0px);
+        /* Для IE */
+        -webkit-transform: translateX(0px);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateX(0px);
+        /* Для Opera */
+        transform: translateX(0px);
+        position: relative;
+        top: auto;
+        right: auto;
+        overflow: visible;
+        padding-top: 60px;
+        z-index: 8;
+        -moz-transform: translateZ(8px);
+        /* Для Firefox */
+        -ms-transform: translateZ(8px);
+        /* Для IE */
+        -webkit-transform: translateZ(8px);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateZ(8px);
+        /* Для Opera */
+        transform: translateZ(8px); }
+        .login-awaiting .loginScreenPopUpWrapper .rsWrapper {
+          position: absolute;
+          height: 100%;
+          top: auto;
+          right: 0;
+          overflow: hidden; } }
+    .loginScreenPopUpWrapper .rsWrapper .rsInner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      text-align: center; }
+      @media (max-width: 1024px) {
+        .loginScreenPopUpWrapper .rsWrapper .rsInner {
+          position: relative;
+          min-height: 0;
+          top: auto;
+          right: auto;
+          left: auto;
+          bottom: auto;
+          padding: 0 20px; } }
+    .loginScreenPopUpWrapper .rsWrapper:before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -16px;
+      margin-left: -16px;
+      background: #F7F9FC url(../assets/ajax-loader-2.gif) center no-repeat;
+      -moz-transition: all 0.95s;
+      -o-transition: all 0.95s;
+      -webkit-transition: all 0.95s;
+      transition: all 0.95s;
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 0;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 0;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: hidden;
+      -moz-transform: scale(0.5);
+      /* Для Firefox */
+      -ms-transform: scale(0.5);
+      /* Для IE */
+      -webkit-transform: scale(0.5);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: scale(0.5);
+      /* Для Opera */
+      transform: scale(0.5); }
+    .loginScreenPopUpWrapper .rsWrapper.loading:before {
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: visible;
+      -moz-transform: scale(1);
+      /* Для Firefox */
+      -ms-transform: scale(1);
+      /* Для IE */
+      -webkit-transform: scale(1);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: scale(1);
+      /* Для Opera */
+      transform: scale(1); }
+    .loginScreenPopUpWrapper .rsWrapper.show {
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: visible; }
+    .loginScreenPopUpWrapper .rsWrapper .lScreenHeader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 42px 70px;
+      width: 100%;
+      -moz-transition: all 0.75s;
+      -o-transition: all 0.75s;
+      -webkit-transition: all 0.75s;
+      transition: all 0.75s;
+      -moz-transform: translateY(-80px);
+      /* Для Firefox */
+      -ms-transform: translateY(-80px);
+      /* Для IE */
+      -webkit-transform: translateY(-80px);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: translateY(-80px);
+      /* Для Opera */
+      transform: translateY(-80px);
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 0;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 0;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: hidden; }
+      @media (max-width: 1380px) {
+        .loginScreenPopUpWrapper .rsWrapper .lScreenHeader {
+          padding: 42px 50px; } }
+      @media (max-width: 1024px) {
+        .loginScreenPopUpWrapper .rsWrapper .lScreenHeader {
+          padding: 20px 0;
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          margin-bottom: 12px; } }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenHeader.show {
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        /* Mozilla 1.6 и ниже */
+        -khtml-opacity: 1;
+        /* Konqueror 3.1, Safari 1.1 */
+        opacity: 1;
+        /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+        visibility: visible;
+        -moz-transform: translateY(0px);
+        /* Для Firefox */
+        -ms-transform: translateY(0px);
+        /* Для IE */
+        -webkit-transform: translateY(0px);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateY(0px);
+        /* Для Opera */
+        transform: translateY(0px); }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul {
+        float: left;
+        text-align: left;
+        font-size: 0;
+        padding-top: 16px;
+        line-height: 1; }
+        @media (max-width: 560px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul {
+            float: none;
+            text-align: center;
+            margin-bottom: 24px; } }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li {
+          display: inline-block;
+          vertical-align: top;
+          font-size: 16px;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin-right: 50px;
+          text-transform: uppercase;
+          font-weight: 600; }
+          @media (max-width: 1740px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li {
+              font-size: 15px;
+              margin-right: 38px; } }
+          @media (max-width: 1600px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li {
+              font-size: 14px;
+              margin-right: 26px; } }
+          @media (max-width: 1380px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li {
+              font-size: 14px;
+              margin-right: 18px; } }
+          @media (max-width: 560px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li {
+              font-size: 12px;
+              font-weight: 700;
+              margin-right: 14px; } }
+          @media (max-width: 380px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li {
+              font-size: 11px; } }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li:last-child {
+            margin-right: 0; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li a {
+            color: #34495e;
+            text-decoration: none;
+            -moz-transition: all 0.35s;
+            -o-transition: all 0.35s;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s; }
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader ul li a:hover {
+              color: #00ACCF; }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenHeader .npButton {
+        float: right; }
+        @media (max-width: 560px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenHeader .npButton {
+            float: none;
+            text-align: center;
+            margin-bottom: 12px; }
+            .loginScreenPopUpWrapper .rsWrapper .lScreenHeader .npButton a {
+              display: inline-block; } }
+        @media (max-width: 1600px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenHeader .npButton a {
+            padding-left: 24px;
+            padding-right: 24px; } }
+    .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper {
+      -moz-transform: translateY(-55%) scale(0.75);
+      /* Для Firefox */
+      -ms-transform: translateY(-55%) scale(0.75);
+      /* Для IE */
+      -webkit-transform: translateY(-55%) scale(0.75);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: translateY(-55%) scale(0.75);
+      /* Для Opera */
+      transform: translateY(-55%) scale(0.75);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      margin-left: -300px;
+      -moz-transition: all 0.65s;
+      -o-transition: all 0.65s;
+      -webkit-transition: all 0.65s;
+      transition: all 0.65s;
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 0;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 0;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: hidden; }
+      @media (max-width: 1380px) {
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper {
+          width: 500px;
+          margin-left: -250px; } }
+      @media (max-width: 1024px) {
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper {
+          -moz-transform: translateY(0) scale(0.75);
+          /* Для Firefox */
+          -ms-transform: translateY(0) scale(0.75);
+          /* Для IE */
+          -webkit-transform: translateY(0) scale(0.75);
+          /* Для Safari, Chrome, iOS */
+          -o-transform: translateY(0) scale(0.75);
+          /* Для Opera */
+          transform: translateY(0) scale(0.75);
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          max-width: 480px;
+          margin: 0 auto 32px; } }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper img {
+        display: block;
+        max-width: 225px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 34px; }
+        @media (max-width: 1380px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper img {
+            max-width: 200px;
+            margin: 0 auto 28px; } }
+        @media (max-width: 560px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper img {
+            max-width: 148px; } }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper.show {
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        /* Mozilla 1.6 и ниже */
+        -khtml-opacity: 1;
+        /* Konqueror 3.1, Safari 1.1 */
+        opacity: 1;
+        /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+        visibility: visible;
+        -moz-transform: translateY(-55%) scale(1);
+        /* Для Firefox */
+        -ms-transform: translateY(-55%) scale(1);
+        /* Для IE */
+        -webkit-transform: translateY(-55%) scale(1);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateY(-55%) scale(1);
+        /* Для Opera */
+        transform: translateY(-55%) scale(1); }
+        @media (max-width: 1024px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper.show {
+            -moz-transform: translateY(0) scale(1);
+            /* Для Firefox */
+            -ms-transform: translateY(0) scale(1);
+            /* Для IE */
+            -webkit-transform: translateY(0) scale(1);
+            /* Для Safari, Chrome, iOS */
+            -o-transform: translateY(0) scale(1);
+            /* Для Opera */
+            transform: translateY(0) scale(1); } }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup {
+        width: 100%;
+        -webkit-box-shadow: 0px 20px 32.55px 2.45px rgba(109, 109, 109, 0.28);
+        -moz-box-shadow: 0px 20px 32.55px 2.45px rgba(109, 109, 109, 0.28);
+        box-shadow: 0px 20px 32.55px 2.45px rgba(109, 109, 109, 0.28);
+        padding: 50px 90px 50px;
+        background: #fff center no-repeat;
+        box-sizing: border-box;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px; }
+        @media (max-width: 560px) {
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup {
+            padding: 28px 30px 48px; } }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup.busy {
+          background: #fff url(../assets/ajax-loader.gif) center no-repeat; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup.busy > * {
+            filter: alpha(opacity=35);
+            -moz-opacity: 0.35;
+            /* Mozilla 1.6 и ниже */
+            -khtml-opacity: 0.35;
+            /* Konqueror 3.1, Safari 1.1 */
+            opacity: 0.35;
+            /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+            pointer-events: none; }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .npTitle {
+          font-size: 24px;
+          color: #00BEDE;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 600;
+          margin-bottom: 38px;
+          line-height: 1;
+          margin-top: 0; }
+          @media (max-width: 1380px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .npTitle {
+              font-size: 20px;
+              margin-bottom: 28px; } }
+          @media (max-width: 560px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .npTitle {
+              font-size: 16px;
+              margin-bottom: 16px; } }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .inputWrapper {
+          text-align: center;
+          margin-bottom: 38px; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .inputWrapper input {
+            display: inline-block;
+            width: 100%;
+            max-width: 300px !important;
+            margin: 0 auto;
+            background-color: #fff;
+            border: solid 1px #e8e8e8;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            padding: 14px;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #24465f;
+            font-size: 16px;
+            outline: none;
+            -moz-transition: all 0.35s;
+            -o-transition: all 0.35s;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+            height: 45px; }
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .inputWrapper input.red {
+              border: solid 1px #ff4860;
+              background-color: rgba(255, 72, 96, 0.09); }
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .inputWrapper input.green {
+              border: solid 1px #68ffa1;
+              background-color: rgba(104, 255, 161, 0.09); }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons {
+          display: block;
+          max-width: 300px;
+          margin: 0 auto;
+          height: 45px; }
+          @media (max-width: 560px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons {
+              font-size: 13px; } }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons .back {
+            float: left; }
+            @media (max-width: 560px) {
+              .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons .back {
+                width: 48%;
+                text-align: center; }
+                .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons .back a {
+                  padding-left: 0;
+                  padding-right: 0; } }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons .login {
+            float: right; }
+            @media (max-width: 560px) {
+              .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons .login {
+                width: 48%;
+                text-align: center; }
+                .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .buttons .login a {
+                  padding-left: 0;
+                  padding-right: 0; } }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .hint {
+          padding-top: 28px;
+          display: none;
+          text-align: center;
+          font-size: 16px;
+          color: #00BEDE;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 400;
+          margin-bottom: 0;
+          line-height: 1; }
+          @media (max-width: 1380px) {
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .hint {
+              font-size: 14px; } }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .hint.show {
+            display: block; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .hint a {
+            text-decoration: none;
+            color: #00BEDE; }
+            .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .hint a:hover {
+              text-decoration: underline; }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .error {
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          background-color: #F7D7E0;
+          position: absolute;
+          bottom: 100%;
+          margin-bottom: 11px;
+          left: 0;
+          width: 100%;
+          padding: 8px 12px;
+          box-sizing: border-box;
+          color: #f6506e;
+          font-size: 18px;
+          font-family: 'Source Sans Pro', sans-serif;
+          text-align: left;
+          display: block;
+          -moz-transition: all 1.2s;
+          -o-transition: all 1.2s;
+          -webkit-transition: all 1.2s;
+          transition: all 1.2s;
+          -moz-transform: translateY(-15px);
+          /* Для Firefox */
+          -ms-transform: translateY(-15px);
+          /* Для IE */
+          -webkit-transform: translateY(-15px);
+          /* Для Safari, Chrome, iOS */
+          -o-transform: translateY(-15px);
+          /* Для Opera */
+          transform: translateY(-15px);
+          filter: alpha(opacity=0);
+          -moz-opacity: 0;
+          /* Mozilla 1.6 и ниже */
+          -khtml-opacity: 0;
+          /* Konqueror 3.1, Safari 1.1 */
+          opacity: 0;
+          /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+          visibility: hidden; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenPopupWrapper .lScreenPopup .error.show {
+            filter: alpha(opacity=100);
+            -moz-opacity: 1;
+            /* Mozilla 1.6 и ниже */
+            -khtml-opacity: 1;
+            /* Konqueror 3.1, Safari 1.1 */
+            opacity: 1;
+            /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+            visibility: visible;
+            -moz-transform: translateY(0px);
+            /* Для Firefox */
+            -ms-transform: translateY(0px);
+            /* Для IE */
+            -webkit-transform: translateY(0px);
+            /* Для Safari, Chrome, iOS */
+            -o-transform: translateY(0px);
+            /* Для Opera */
+            transform: translateY(0px); }
+    .loginScreenPopUpWrapper .rsWrapper .lScreenFooter {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 24px 70px;
+      width: 100%;
+      -moz-transition: all 0.75s;
+      -o-transition: all 0.75s;
+      -webkit-transition: all 0.75s;
+      transition: all 0.75s;
+      -moz-transform: translateY(80px);
+      /* Для Firefox */
+      -ms-transform: translateY(80px);
+      /* Для IE */
+      -webkit-transform: translateY(80px);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: translateY(80px);
+      /* Для Opera */
+      transform: translateY(80px);
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 0;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 0;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: hidden; }
+      @media (max-width: 1024px) {
+        .loginScreenPopUpWrapper .rsWrapper .lScreenFooter {
+          position: relative;
+          bottom: auto;
+          left: auto;
+          padding: 20px 0; } }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenFooter.show {
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        /* Mozilla 1.6 и ниже */
+        -khtml-opacity: 1;
+        /* Konqueror 3.1, Safari 1.1 */
+        opacity: 1;
+        /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+        visibility: visible;
+        -moz-transform: translateY(0px);
+        /* Для Firefox */
+        -ms-transform: translateY(0px);
+        /* Для IE */
+        -webkit-transform: translateY(0px);
+        /* Для Safari, Chrome, iOS */
+        -o-transform: translateY(0px);
+        /* Для Opera */
+        transform: translateY(0px); }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenFooter ul {
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 0;
+        line-height: 1;
+        padding-bottom: 32px;
+        border-bottom: solid 1px #E8E8E8;
+        margin-bottom: 26px; }
+        .loginScreenPopUpWrapper .rsWrapper .lScreenFooter ul li {
+          display: inline-block;
+          vertical-align: top;
+          font-size: 16px;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin-right: 48px;
+          font-weight: 600; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenFooter ul li:last-child {
+            margin-right: 0; }
+          .loginScreenPopUpWrapper .rsWrapper .lScreenFooter ul li a {
+            color: #34495e;
+            text-decoration: none;
+            -moz-transition: all 0.35s;
+            -o-transition: all 0.35s;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s; }
+            .loginScreenPopUpWrapper .rsWrapper .lScreenFooter ul li a:hover {
+              color: #00ACCF; }
+      .loginScreenPopUpWrapper .rsWrapper .lScreenFooter .copyright {
+        color: #7B8B98;
+        font-size: 14px;
+        text-align: center; }
+
+.button-carnation a,
+.button-blue a,
+.button-grey a {
+  display: block;
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 46px;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  border-radius: 22px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(109, 109, 109, 0.28);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(109, 109, 109, 0.28);
+  box-shadow: 0px 3px 6px 0px rgba(109, 109, 109, 0.28);
+  background-color: #f64f6e;
+  background-size: 100% 105%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s; }
+  .button-carnation a:hover,
+  .button-blue a:hover,
+  .button-grey a:hover {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(109, 109, 109, 0.48);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(109, 109, 109, 0.48);
+    box-shadow: 0px 3px 6px 0px rgba(109, 109, 109, 0.48);
+    background-size: 200% 100%;
+    color: #fff;
+    text-decoration: none; }
+
+.button-carnation.dark-shadow a,
+.button-blue.dark-shadow a,
+.button-grey.dark-shadow a {
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.28); }
+  .button-carnation.dark-shadow a:hover,
+  .button-blue.dark-shadow a:hover,
+  .button-grey.dark-shadow a:hover {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.48);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.48);
+    background-size: 200% 100%; }
+
+.button-carnation a {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMEAAAABCAIAAADoyF1/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjIxNTA3M0Y1OUNCQzExRTdBQTgyQ0EwMzU5N0ExNEFGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjIxNTA3M0Y2OUNCQzExRTdBQTgyQ0EwMzU5N0ExNEFGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjE1MDczRjM5Q0JDMTFFN0FBODJDQTAzNTk3QTE0QUYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjE1MDczRjQ5Q0JDMTFFN0FBODJDQTAzNTk3QTE0QUYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7IvcK3AAAAWUlEQVR42oyRQRLAIAwC3Rf2Jz6/V3pTO4GMOTgKxCDyPnOsYriSxbFiji57IfWoDZPFKFNrkaX+e6Oh+GnN7EC4HlE1RMo92Zkh5RxjV/fROPgMJIz4BBgAvHMP1RA1PugAAAAASUVORK5CYII=); }
+
+.button-grey a {
+  color: #26C2DF !important;
+  border: solid 1px #E8E8E8;
+  background-color: #F7F9FC; }
+
+.button-grey:hover {
+  color: #26C2DF !important;
+  text-decoration: none; }
+
+.button-rectangle a {
+  display: block;
+  position: relative;
+  padding: 14px 40px;
+  font-size: 18px;
+  text-decoration: none;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  overflow: hidden; }
+  .button-rectangle a span {
+    position: relative;
+    z-index: 3; }
+  .button-rectangle a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s; }
+  .button-rectangle a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; }
+  .button-rectangle a:hover:before {
+    bottom: 0; }
+
+.button-rectangle-blue a {
+  color: #fff;
+  background-color: #00CFD8; }
+  .button-rectangle-blue a:before {
+    background-color: #fff; }
+  .button-rectangle-blue a:after {
+    border: solid 3px #00CFD8; }
+  .button-rectangle-blue a:hover {
+    color: #00CFD8; }
+
+.button-blue a {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAABCAIAAADBz6L4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ2RDdGQTY4OUUyRDExRTdBNENDQTAxREMwMjY0NjQ1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ2RDdGQTY5OUUyRDExRTdBNENDQTAxREMwMjY0NjQ1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDZEN0ZBNjY5RTJEMTFFN0E0Q0NBMDFEQzAyNjQ2NDUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDZEN0ZBNjc5RTJEMTFFN0E0Q0NBMDFEQzAyNjQ2NDUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6YAc5FAAAAMUlEQVR42mJU2/eQgVjwH12AEa9yRhx6GamhHqtiqqkk3vb/BMKMpoGAT5aoyAIIMABjBgvP7YTa3QAAAABJRU5ErkJggg==); }
+
+#nav, #loginform, body script {
+  display: none; }
+
+.compact {
+  max-width: 320px;
+  margin: 0 auto;
+  margin-top: 35px; }
+  .compact #npError {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #F7D7E0;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 18px 12px;
+    box-sizing: border-box;
+    color: #f6506e;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: left;
+    display: block;
+    -moz-transition: all 1.2s;
+    -o-transition: all 1.2s;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
+    -moz-transform: translateY(-15px);
+    /* Для Firefox */
+    -ms-transform: translateY(-15px);
+    /* Для IE */
+    -webkit-transform: translateY(-15px);
+    /* Для Safari, Chrome, iOS */
+    -o-transform: translateY(-15px);
+    /* Для Opera */
+    transform: translateY(-15px);
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    visibility: hidden; }
+    .compact #npError.show {
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: visible;
+      -moz-transform: translateY(0px);
+      /* Для Firefox */
+      -ms-transform: translateY(0px);
+      /* Для IE */
+      -webkit-transform: translateY(0px);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: translateY(0px);
+      /* Для Opera */
+      transform: translateY(0px); }
+  .compact .loginScreenCompactWrapper {
+    text-align: center;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    visibility: hidden;
+    width: auto;
+    min-height: 50px;
+    background: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition: all 0.75s;
+    -o-transition: all 0.75s;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+    -moz-transform: scale(0.7);
+    /* Для Firefox */
+    -ms-transform: scale(0.7);
+    /* Для IE */
+    -webkit-transform: scale(0.7);
+    /* Для Safari, Chrome, iOS */
+    -o-transform: scale(0.7);
+    /* Для Opera */
+    transform: scale(0.7);
+    padding: 50px 20px; }
+    .compact .loginScreenCompactWrapper.show {
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      visibility: visible;
+      -moz-transform: scale(1);
+      /* Для Firefox */
+      -ms-transform: scale(1);
+      /* Для IE */
+      -webkit-transform: scale(1);
+      /* Для Safari, Chrome, iOS */
+      -o-transform: scale(1);
+      /* Для Opera */
+      transform: scale(1); }
+    .compact .loginScreenCompactWrapper .compactAwaiting {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f1f1f1;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      z-index: 100;
+      visibility: hidden;
+      filter: alpha(opacity=0);
+      -moz-opacity: 0;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 0;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 0;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+      -moz-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s; }
+      .compact .loginScreenCompactWrapper .compactAwaiting.show {
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        /* Mozilla 1.6 и ниже */
+        -khtml-opacity: 1;
+        /* Konqueror 3.1, Safari 1.1 */
+        opacity: 1;
+        /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+        visibility: visible; }
+      .compact .loginScreenCompactWrapper .compactAwaiting .phoneWrapper .phone img {
+        max-width: 50%;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px; }
+      .compact .loginScreenCompactWrapper .compactAwaiting .phoneWrapper .phone img.phoneBg {
+        position: absolute;
+        top: 37px;
+        left: 90px;
+        max-height: 251px; }
+      .compact .loginScreenCompactWrapper .compactAwaiting .phoneWrapper .progress {
+        background: transparent !important;
+        box-shadow: none !important;
+        position: absolute;
+        top: 90px;
+        left: 135px; }
+      .compact .loginScreenCompactWrapper .compactAwaiting .phoneWrapper .timer {
+        position: absolute;
+        top: 105px;
+        left: 150px;
+        font-size: 18px;
+        color: #fff; }
+    .compact .loginScreenCompactWrapper h1 {
+      color: #00BEDE;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      margin-top: 0; }
+    .compact .loginScreenCompactWrapper input {
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #00BEDE;
+      padding-left: 0;
+      font-size: 18px;
+      box-shadow: none;
+      margin-bottom: 30px;
+      font-weight: 300;
+      box-sizing: border-box;
+      -moz-transition: all 0.75s;
+      -o-transition: all 0.75s;
+      -webkit-transition: all 0.75s;
+      transition: all 0.75s; }
+      .compact .loginScreenCompactWrapper input.red {
+        background-color: rgba(255, 72, 96, 0.09); }
+      .compact .loginScreenCompactWrapper input.green {
+        background-color: rgba(104, 255, 161, 0.09); }
+      .compact .loginScreenCompactWrapper input:focus {
+        outline: 0; }
+    .compact .loginScreenCompactWrapper .button-blue {
+      margin-top: 0;
+      margin-bottom: 0; }
+      .compact .loginScreenCompactWrapper .button-blue a {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        text-align: center; }
+    .compact .loginScreenCompactWrapper p.hint {
+      text-align: center;
+      font-size: 15px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 400;
+      margin-bottom: 0;
+      line-height: 1;
+      margin-top: 60px;
+      display: none; }
+      .compact .loginScreenCompactWrapper p.hint.show {
+        display: block; }
+      .compact .loginScreenCompactWrapper p.hint#createUser {
+        margin-top: 20px; }
+      .compact .loginScreenCompactWrapper p.hint.nphint {
+        display: none; }
+        .compact .loginScreenCompactWrapper p.hint.nphint.show {
+          display: block; }
+      .compact .loginScreenCompactWrapper p.hint.passwordhint {
+        display: none; }
+        .compact .loginScreenCompactWrapper p.hint.passwordhint.show {
+          display: block; }
+      .compact .loginScreenCompactWrapper p.hint:hover {
+        color: #00BEDE !important; }
+      .compact .loginScreenCompactWrapper p.hint a {
+        color: #00BEDE !important;
+        text-decoration: none; }
+        .compact .loginScreenCompactWrapper p.hint a:hover {
+          text-decoration: underline; }
+
+#createUserPopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 10000;
+  visibility: hidden;
+  -webkit-box-shadow: 0px 20px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 0 rgba(0, 0, 0, 0.3);
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  /* Mozilla 1.6 и ниже */
+  -khtml-opacity: 0;
+  /* Konqueror 3.1, Safari 1.1 */
+  opacity: 0;
+  /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+  -moz-transform: translateY(-20px);
+  /* Для Firefox */
+  -ms-transform: translateY(-20px);
+  /* Для IE */
+  -webkit-transform: translateY(-20px);
+  /* Для Safari, Chrome, iOS */
+  -o-transform: translateY(-20px);
+  /* Для Opera */
+  transform: translateY(-20px);
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s; }
+  #createUserPopup.show {
+    visibility: visible;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 1;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 1;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    -moz-transform: translateY(0px);
+    /* Для Firefox */
+    -ms-transform: translateY(0px);
+    /* Для IE */
+    -webkit-transform: translateY(0px);
+    /* Для Safari, Chrome, iOS */
+    -o-transform: translateY(0px);
+    /* Для Opera */
+    transform: translateY(0px); }
+  #createUserPopup.fullscreen {
+    background: rgba(0, 0, 0, 0.3); }
+  #createUserPopup .npDialog {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 480px;
+    background: #fff;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    max-height: 580px; }
+    @media (max-width: 440px) {
+      #createUserPopup .npDialog {
+        height: 100%;
+        max-height: none;
+        position: fixed;
+        overflow-y: scroll;
+        overflow-x: hidden; } }
+    #createUserPopup .npDialog h1 {
+      font-size: 22px;
+      color: #26C2DF;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+      margin-bottom: 38px;
+      text-align: center !important; }
+      @media (max-width: 1260px) {
+        #createUserPopup .npDialog h1 {
+          font-size: 18px; } }
+    #createUserPopup .npDialog p.createUserDescription {
+      color: #6d6d6d;
+      margin-bottom: 20px;
+      text-align: center; }
+    #createUserPopup .npDialog div.line {
+      height: 1px;
+      width: 100%;
+      background: #ececec;
+      margin-bottom: 20px; }
+    #createUserPopup .npDialog span.inputSpan {
+      color: #6d6d6d; }
+    #createUserPopup .npDialog input {
+      display: inline-block;
+      width: 100%;
+      max-width: 100% !important;
+      margin: 0 auto;
+      background-color: #fff;
+      border: solid 1px #e8e8e8;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      padding: 14px;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      color: #24465f;
+      font-size: 16px;
+      outline: none;
+      margin-bottom: 15px;
+      margin-top: 5px;
+      -moz-transition: all 0.35s;
+      -o-transition: all 0.35s;
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s; }
+      #createUserPopup .npDialog input:read-only {
+        background: #f7f7f7; }
+      #createUserPopup .npDialog input.red {
+        border: solid 1px #ff4860;
+        background-color: rgba(255, 72, 96, 0.09); }
+      #createUserPopup .npDialog input.green {
+        border: solid 1px #68ffa1;
+        background-color: rgba(104, 255, 161, 0.09); }
+    #createUserPopup .npDialog .checkboxWrapper {
+      text-align: center;
+      margin-top: 5px; }
+      #createUserPopup .npDialog .checkboxWrapper input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+        border-radius: 2px;
+        margin: 5px 8px;
+        margin-top: 3px; }
+      #createUserPopup .npDialog .checkboxWrapper span {
+        color: #6d6d6d;
+        margin-top: 2px; }
+    #createUserPopup .npDialog .buttons {
+      margin-top: 190px; }
+      #createUserPopup .npDialog .buttons .npButton {
+        display: inline-block; }
+        @media (max-width: 440px) {
+          #createUserPopup .npDialog .buttons .npButton {
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%; } }
+        #createUserPopup .npDialog .buttons .npButton.button-grey {
+          color: #26C2DF; }
+        #createUserPopup .npDialog .buttons .npButton.button-blue {
+          color: #fff !important;
+          float: right; }
+          #createUserPopup .npDialog .buttons .npButton.button-blue:hover, #createUserPopup .npDialog .buttons .npButton.button-blue:focus {
+            color: #fff !important; }
+  #createUserPopup #NPCreateUserError h1 {
+    color: #ff4e71;
+    text-align: center; }
+  #createUserPopup .NPSuccess, #createUserPopup .NPCreateUserError, #createUserPopup .NPCheckEmail {
+    background: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 480px;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    max-height: 580px;
+    z-index: 5;
+    visibility: hidden;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    -moz-transform: all 0.75s;
+    /* Для Firefox */
+    -ms-transform: all 0.75s;
+    /* Для IE */
+    -webkit-transform: all 0.75s;
+    /* Для Safari, Chrome, iOS */
+    -o-transform: all 0.75s;
+    /* Для Opera */
+    transform: all 0.75s; }
+    @media (max-width: 440px) {
+      #createUserPopup .NPSuccess, #createUserPopup .NPCreateUserError, #createUserPopup .NPCheckEmail {
+        height: 100%;
+        max-height: none;
+        position: fixed;
+        overflow-y: scroll;
+        overflow-x: hidden; } }
+    #createUserPopup .NPSuccess.show, #createUserPopup .NPCreateUserError.show, #createUserPopup .NPCheckEmail.show {
+      visibility: visible;
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */ }
+    #createUserPopup .NPSuccess svg, #createUserPopup .NPCreateUserError svg, #createUserPopup .NPCheckEmail svg {
+      display: block;
+      max-width: 40%;
+      margin: 20px auto; }
+    #createUserPopup .NPSuccess h1, #createUserPopup .NPCreateUserError h1, #createUserPopup .NPCheckEmail h1 {
+      margin-top: 40px;
+      font-size: 22px;
+      color: #26C2DF;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+      margin-bottom: 38px;
+      line-height: 28px; }
+      @media (max-width: 1260px) {
+        #createUserPopup .NPSuccess h1, #createUserPopup .NPCreateUserError h1, #createUserPopup .NPCheckEmail h1 {
+          font-size: 18px; } }
+    #createUserPopup .NPSuccess p, #createUserPopup .NPCreateUserError p, #createUserPopup .NPCheckEmail p {
+      color: #6d6d6d;
+      margin-bottom: 20px;
+      text-align: center; }
+    #createUserPopup .NPSuccess .npButton, #createUserPopup .NPCreateUserError .npButton, #createUserPopup .NPCheckEmail .npButton {
+      margin-top: 80px; }
+  #createUserPopup .NPCheckEmail {
+    -moz-transform: opacity 2s;
+    /* Для Firefox */
+    -ms-transform: opacity 2s;
+    /* Для IE */
+    -webkit-transform: opacity 2s;
+    /* Для Safari, Chrome, iOS */
+    -o-transform: opacity 2s;
+    /* Для Opera */
+    transform: opacity 2s; }
+  #createUserPopup .NPCreateUserWait {
+    background: rgba(255, 255, 255, 0.3) url(../assets/ajax-loader.gif) center no-repeat;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 480px;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    max-height: 580px;
+    z-index: 5;
+    visibility: hidden;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    /* Mozilla 1.6 и ниже */
+    -khtml-opacity: 0;
+    /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0;
+    /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+    -moz-transform: all 0.75s;
+    /* Для Firefox */
+    -ms-transform: all 0.75s;
+    /* Для IE */
+    -webkit-transform: all 0.75s;
+    /* Для Safari, Chrome, iOS */
+    -o-transform: all 0.75s;
+    /* Для Opera */
+    transform: all 0.75s; }
+    @media (max-width: 440px) {
+      #createUserPopup .NPCreateUserWait {
+        height: 100%;
+        max-height: none;
+        position: fixed;
+        overflow-y: scroll;
+        overflow-x: hidden; } }
+    #createUserPopup .NPCreateUserWait.show {
+      visibility: visible;
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      /* Mozilla 1.6 и ниже */
+      -khtml-opacity: 1;
+      /* Konqueror 3.1, Safari 1.1 */
+      opacity: 1;
+      /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */ }
